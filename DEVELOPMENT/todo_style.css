@@ -1,0 +1,206 @@
+*{@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&family=Cedarville+Cursive&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+  font-weight: 600;
+  font-style: normal;
+
+
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(https://cdnb.artstation.com/p/assets/images/images/014/943/723/large/julian-seifert-sunset-scene-ful.jpg?1546428707) no-repeat center center/cover;
+}
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+}
+.todo-app{
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 100px rgba(0,0,0,0.5);
+    border: 3px solid rgba(255, 255, 255,0.18);
+    backdrop-filter: blur(10px);
+    position: relative;
+    background: none;
+    overflow: hidden;
+}
+.input-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.input-area input{
+    flex: 1;
+    padding: 10px 17px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 22px;
+    background: rgba(240, 9, 67, 0.3);
+    color: #0a0000;
+}
+.input-area input::placeholder{
+    color: #bcbcbc;
+}
+.input-area button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    padding: 8px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.1rem;
+    background: #f009434d;
+    border: 2px solid rgba(255, 250, 250, 0.142);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    /* Move button inside the box visually */
+    position: relative;
+    z-index: 2;
+}
+.input-area button:hover{
+    transform: scale(1.1);
+    background: #72001dfa;
+}
+.todos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 0; /* fit to content */
+  position: relative;
+}
+#empty-image {
+  width: 200px;
+  opacity: 0.8;
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 2;
+  /* Center inside .todo-app */
+  left: 0;
+  right: 0;
+}
+.task-list{
+    width: 100%;
+}
+#task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background:#f009434d ;
+  margin-bottom: 10px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  color: #fff;
+  position: relative;
+  transition: box-shadow 0.2s ease;
+  margin-left: 3px;
+}
+
+#task-list li:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+#task-list li .checkbox {
+  min-width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  border-radius: 50%;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#task-list li .checkbox:checked {
+  background: #f00943a7;
+  transform: scale(1.1);
+}
+#task-list li .checkbox:checked::before {
+  content: '\2713';
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+}
+#task-list li span {
+  flex: 1;
+  text-align: left;
+  margin-left: 10px;
+  word-wrap: break-word;
+}
+.task-buttons {
+  display: flex;
+  gap: 10px;
+  margin-right: 0.2em;
+}
+
+.task-buttons button {
+  background: rgb(255, 194,209, 0.3);
+  border: none;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  color: #fff;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1px;
+}
+.task-buttons button:hover{
+    transform: scale(1.2);
+}
+.task-buttons .edit-btn{
+    background: #ffbf00;
+
+}
+.task-buttons .delete-btn{
+    background: #ff134a;
+}
+#task-count.task-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f00943a7;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 10;
+  letter-spacing: 0.5px;
+}
+#task-progress.task-progress {
+  display: none;
+}
